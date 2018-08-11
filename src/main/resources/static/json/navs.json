@@ -1,0 +1,18 @@
+{
+	"contentManagement": [
+		{
+			"title": "数据表",
+			"icon": "icon-text",
+			"href": "page/datax/dataxConfig.html",
+			"spread": false
+		},
+		{
+			"title": "创建DataXJSON",
+			"icon": "&#xe634;",
+			"href": "page/datax/createDataJsonFile.html",
+			"spread": false
+		}
+	]
+}
+
+

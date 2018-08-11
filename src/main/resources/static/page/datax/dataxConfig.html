@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>DataX配置</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="../../layui/css/layui.css" media="all" />
+	<link rel="stylesheet" href="../../css/public.css" media="all" />
+	<style type="text/css">
+		.layui-layer-page .layui-layer-content {
+		    position: relative;
+		    overflow: visible !important;
+		}
+	</style>
+</head>
+<body class="childrenBody">
+	<blockquote class="layui-elem-quote quoteBox">
+		<form class="layui-form">
+			<div class="layui-inline">
+				<a class="layui-btn layui-btn-normal loadTable_Btn">添加数据源</a>
+			</div>
+		</form>
+	</blockquote>
+	<table id="tableList" lay-filter="tableList"></table>
+	
+	<form class="layui-form" id="dbInfoDialog" style="margin-right: 15px; display:none;">
+		<div class="layui-form-item" style="margin-top:5px;">
+			<label class="layui-form-label">库名称：</label>
+			<div class="layui-input-block">
+				<input type="text" id="dbName" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input" value="pms">
+			</div>
+		</div>
+		<div class="layui-form-item" style="margin-top:5px;">
+			<label class="layui-form-label">用户：</label>
+			<div class="layui-input-block">
+				<input type="text" id="dbUser" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input" value="root">
+			</div>
+		</div>
+		<div class="layui-form-item" style="margin-top:5px;">
+			<label class="layui-form-label">密码：</label>
+			<div class="layui-input-block">
+				<input type="text" id="dbPwd" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input" value="andot">
+			</div>
+		</div>
+		<div class="layui-form-item" style="margin-top:5px;">
+			<label class="layui-form-label">库地址：</label>
+			<div class="layui-input-block">
+				<input type="text" id="dbUrl" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input" value="192.168.10.216:3306">
+			</div>
+		</div>
+		<div class="layui-form-item" style="margin-top:5px;">
+			<label class="layui-form-label">库类型：</label>
+			<div class="layui-input-block">
+				<select id="dbType" lay-verify="required">
+			        <option value="0">MySQL</option>
+			        <option value="1">SQLServer</option>
+			    </select>
+			</div>
+		</div>
+	</form>
+	
+	<form class="layui-form" id="columnListDialog" style="margin-right: 15px; display:none;">
+		
+	</form>
+	
+	<!--操作-->
+	<script type="text/html" id="tableListBar">
+		<a class="layui-btn layui-btn-xs layui-btn-primary" lay-event="look">查看字段</a>
+	</script>
+	<script type="text/javascript" src="../../layui/layui.js"></script>
+	<script type="text/javascript" src="dataxConfig.js"></script>
+</body>
+</html>

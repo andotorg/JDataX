@@ -1,0 +1,14 @@
+{
+	"cmsName": "JDataX 数据同步服务",
+	"version": "v1.0",
+	"author": "andot",
+	"homePage": "index.html",
+	"server": "windows",
+	"dataBase": "8.00.2039",
+	"maxUpload": "2M",
+	"userRights": "超级管理员",
+	"description": "",
+	"powerby": "copyright @2018 JDataX",
+	"record": "京ICP备1",
+	"keywords": "JDataX, DataX"
+}

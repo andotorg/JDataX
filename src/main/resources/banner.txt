@@ -1,0 +1,21 @@
+${AnsiColor.BRIGHT_GREEN}
+                                                                                                                          
+          JJJJJJJJJJJDDDDDDDDDDDDD                                   tttt                            XXXXXXX       XXXXXXX
+          J:::::::::JD::::::::::::DDD                             ttt:::t                            X:::::X       X:::::X
+          J:::::::::JD:::::::::::::::DD                           t:::::t                            X:::::X       X:::::X
+          JJ:::::::JJDDD:::::DDDDD:::::D                          t:::::t                            X::::::X     X::::::X
+            J:::::J    D:::::D    D:::::D   aaaaaaaaaaaaa   ttttttt:::::ttttttt      aaaaaaaaaaaaa   XXX:::::X   X:::::XXX
+            J:::::J    D:::::D     D:::::D  a::::::::::::a  t:::::::::::::::::t      a::::::::::::a     X:::::X X:::::X   
+            J:::::J    D:::::D     D:::::D  aaaaaaaaa:::::a t:::::::::::::::::t      aaaaaaaaa:::::a     X:::::X:::::X    
+            J:::::j    D:::::D     D:::::D           a::::a tttttt:::::::tttttt               a::::a      X:::::::::X     
+            J:::::J    D:::::D     D:::::D    aaaaaaa:::::a       t:::::t              aaaaaaa:::::a      X:::::::::X     
+JJJJJJJ     J:::::J    D:::::D     D:::::D  aa::::::::::::a       t:::::t            aa::::::::::::a     X:::::X:::::X    
+J:::::J     J:::::J    D:::::D     D:::::D a::::aaaa::::::a       t:::::t           a::::aaaa::::::a    X:::::X X:::::X   
+J::::::J   J::::::J    D:::::D    D:::::D a::::a    a:::::a       t:::::t    tttttta::::a    a:::::a XXX:::::X   X:::::XXX
+J:::::::JJJ:::::::J  DDD:::::DDDDD:::::D  a::::a    a:::::a       t::::::tttt:::::ta::::a    a:::::a X::::::X     X::::::X
+ JJ:::::::::::::JJ   D:::::::::::::::DD   a:::::aaaa::::::a       tt::::::::::::::ta:::::aaaa::::::a X:::::X       X:::::X
+   JJ:::::::::JJ     D::::::::::::DDD      a::::::::::aa:::a        tt:::::::::::tt a::::::::::aa:::aX:::::X       X:::::X
+     JJJJJJJJJ       DDDDDDDDDDDDD          aaaaaaaaaa  aaaa          ttttttttttt    aaaaaaaaaa  aaaaXXXXXXX       XXXXXXX
+                                                                                                                                   
+${AnsiColor.BRIGHT_BLUE}
+::: Project (version:${application.version}) :::    ＼(^O^)／    Spring-Boot ${spring-boot.version}

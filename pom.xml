@@ -1,0 +1,578 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.andot</groupId>
+  <artifactId>JDataX</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>JDataX</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <java.version>1.8</java.version>  
+    <maven.compiler.source>1.8</maven.compiler.source>  
+    <maven.compiler.target>1.8</maven.compiler.target> 
+    <springboot.version>1.5.9.RELEASE</springboot.version>
+    <springframework.version>4.3.13.RELEASE</springframework.version>
+    <hibernate.version>4.2.0.Final</hibernate.version>
+  </properties>
+  
+  <dependencies>
+  	<!-- Spring Boot  -->
+    <dependency>
+	    <groupId>org.springframework.boot</groupId>
+	    <artifactId>spring-boot</artifactId>
+	    <version>${springboot.version}</version>
+	</dependency>
+  	<!-- add Core starter, including auto-configuration support, logging and YAML
+  		  添加  核心启动器，包括自动配置支持、日志记录和YAML -->
+    <dependency>
+	    <groupId>org.springframework.boot</groupId>
+	    <artifactId>spring-boot-starter</artifactId>
+	    <version>${springboot.version}</version>
+	</dependency>
+    <!-- add Spring Boot AutoConfigure
+    	 添加 Spring Boot 自动配置 -->
+	<dependency>
+	    <groupId>org.springframework.boot</groupId>
+	    <artifactId>spring-boot-autoconfigure</artifactId>
+	    <version>${springboot.version}</version>
+	</dependency>
+	<!-- add Starter for using JDBC with the Tomcat JDBC connection pool.
+		 添加 启动器使用JDBC与Tomcat JDBC连接池。 -->
+	<dependency>
+	    <groupId>org.springframework.boot</groupId>
+	    <artifactId>spring-boot-starter-jdbc</artifactId>
+	    <version>${springboot.version}</version>
+	</dependency>
+	<!-- Starter for logging using Logback. Default logging starter.
+	             使用Logback进行日志记录的启动器。默认的日志起动器。 -->
+	<dependency>
+	    <groupId>org.springframework.boot</groupId>
+	    <artifactId>spring-boot-starter-logging</artifactId>
+	    <version>${springboot.version}</version>
+	</dependency>
+	<!-- spring boot test -->  	
+    <dependency>
+	    <groupId>org.springframework.boot</groupId>
+	    <artifactId>spring-boot-test</artifactId>
+	    <version>${springboot.version}</version>
+	    <scope>test</scope>
+	</dependency>
+	<!-- Spring Boot Test Auto-Configure -->
+  	<dependency>
+	    <groupId>org.springframework.boot</groupId>
+	    <artifactId>spring-boot-test-autoconfigure</artifactId>
+	    <version>${springboot.version}</version>
+	</dependency>
+  	<!-- add spring boot web -->
+  	<dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+        <version>${springboot.version}</version>
+    </dependency>
+    <!-- add spring boot freemarker support -->
+	<dependency>
+	    <groupId>org.springframework.boot</groupId>
+	    <artifactId>spring-boot-starter-freemarker</artifactId>
+        <version>${springboot.version}</version>
+	</dependency>
+	<!-- add jsp support explin :添加jsp显示支持 springboot tomcat -->
+	<dependency>  
+      <groupId>org.springframework.boot</groupId>  
+      <artifactId>spring-boot-starter-tomcat</artifactId>  
+      <version>${springboot.version}</version>
+      <scope>provided</scope>
+    </dependency> 
+    <dependency>
+      <groupId>org.apache.tomcat.embed</groupId>
+      <artifactId>tomcat-embed-jasper</artifactId>
+      <version>${springboot.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <!-- add springboot dev tools warn: optional is true , this is the available! -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-devtools</artifactId>
+        <version>${springboot.version}</version>
+        <optional>true</optional>
+    </dependency>
+    <!-- 配置文件  -->
+	<dependency>
+	    <groupId>org.springframework.boot</groupId>
+	    <artifactId>spring-boot-configuration-processor</artifactId>
+	    <version>${springboot.version}</version>
+	</dependency>
+    
+    <!-- Spring Framework  -->
+    <!-- spring-web  -->
+    <dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-web</artifactId>
+	    <version>${springframework.version}</version>
+	</dependency>
+	<!-- Spring Web MVC -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-webmvc</artifactId>
+	    <version>${springframework.version}</version>
+	</dependency>
+	<!-- Spring Aop -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-aop</artifactId>
+	    <version>${springframework.version}</version>
+	</dependency>	
+	<!-- Spring Beans -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-beans</artifactId>
+	    <version>${springframework.version}</version>
+	</dependency>	
+	<!-- Spring JDBC -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-jdbc</artifactId>
+	    <version>${springframework.version}</version>
+	</dependency>
+	<!-- Spring Transaction -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-tx</artifactId>
+	    <version>${springframework.version}</version>
+	</dependency>
+	<!-- Spring Core -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-core</artifactId>
+	    <version>${springframework.version}</version>
+	</dependency>
+	<!-- Spring Context Support -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-context-support</artifactId>
+	    <version>${springframework.version}</version>
+	</dependency>
+	<!-- Spring Context -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-context</artifactId>
+	    <version>${springframework.version}</version>
+	</dependency>
+	<!-- Spring Expression Language (SpEL) -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-expression</artifactId>
+	    <version>${springframework.version}</version>
+	</dependency>
+	<!-- Spring Object/Relational Mapping -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-orm</artifactId>
+	    <version>${springframework.version}</version>
+	</dependency>
+	<dependency> 
+        <groupId>org.springframework</groupId>  
+        <artifactId>spring-test</artifactId>  
+        <version>${springframework.version}</version>  
+        <scope>test</scope>
+    </dependency>
+    
+    <!-- Tomcat --> 
+    <dependency>
+	    <groupId>org.apache.tomcat.embed</groupId>
+	    <artifactId>tomcat-embed-jasper</artifactId>
+	    <version>8.5.23</version>
+	</dependency>
+	
+	<!-- add Enterprise Job Scheduler -->
+	<dependency>
+	    <groupId>org.quartz-scheduler</groupId>
+	    <artifactId>quartz</artifactId>
+	    <version>1.8.6</version>
+	</dependency>
+	
+    <!-- add spring boot mybatis -->
+    <dependency>
+        <groupId>org.mybatis</groupId>
+        <artifactId>mybatis</artifactId>
+        <version>3.4.4</version>
+    </dependency>
+    <dependency>
+        <groupId>org.mybatis.spring.boot</groupId>
+        <artifactId>mybatis-spring-boot-starter</artifactId>
+        <version>1.3.0</version>
+    </dependency>
+    <!-- add mysql drive -->
+    <dependency>
+	    <groupId>mysql</groupId>
+	    <artifactId>mysql-connector-java</artifactId>
+	    <version>5.1.27</version>
+	</dependency>
+    <!-- add alibaba druid databases connection pool -->
+    <dependency>
+		<groupId>com.alibaba</groupId>
+		<artifactId>druid-spring-boot-starter</artifactId>
+		<version>1.1.5</version>
+	</dependency>
+	<!-- add alibaba fastjson -->
+	<dependency>
+	    <groupId>com.alibaba</groupId>
+	    <artifactId>fastjson</artifactId>
+	    <version>1.2.6</version>
+	</dependency>
+	<!-- add json -->
+	<dependency>  
+        <groupId>net.sf.json-lib</groupId>  
+        <artifactId>json-lib</artifactId>  
+        <version>2.1</version> 
+        <classifier>jdk15</classifier> 
+    </dependency>  
+    <!-- add beanutils, 
+      		explain: a package of Java utility classes for the classes that are in java.lang's hierarchy, or are considered to be so standard as to justify existence in java.lang.
+			Java中类的Java实用程序类的包。lang的层次结构，或被认为是标准的，以证明存在于java.lang中。-->
+    <dependency>  
+        <groupId>org.apache.commons</groupId>  
+        <artifactId>commons-lang3</artifactId>  
+        <version>3.1</version>  
+    </dependency>  
+    <dependency>
+        <groupId>commons-lang</groupId>
+        <artifactId>commons-lang</artifactId>
+        <version>2.6</version>
+    </dependency>
+    <!-- add beanutils, 
+    	explain: provides an easy-to-use but flexible wrapper around reflection and introspection. 
+    	提供了一种易于使用但灵活的包装器，可以反射和内省。-->
+    <dependency>
+	    <groupId>commons-beanutils</groupId>
+	    <artifactId>commons-beanutils</artifactId>
+	    <version>1.7.0</version>
+	</dependency>
+    <!-- add commons-logging, explain: log4j. -->
+    <dependency>  
+        <groupId>commons-logging</groupId>  
+        <artifactId>commons-logging</artifactId>  
+        <version>1.1.3</version>  
+    </dependency>  
+    <!-- Apache Commons FileUpload组件提供了一个简单的方法。
+			灵活的方式，增加对多部分文件上载功能的支持，以servlet和web应用。 -->
+    <dependency>
+	    <groupId>commons-fileupload</groupId>
+	    <artifactId>commons-fileupload</artifactId>
+	    <version>1.2.1</version>
+	</dependency>
+	
+    <dependency>
+	    <groupId>log4j</groupId>
+	    <artifactId>log4j</artifactId>
+	    <version>1.2.16</version>
+	</dependency>
+    <!-- add commons-collections, 
+    	explain: contains types that extend and augment the Java Collections Framework. 
+    	包含扩展和扩充Java集合框架的类型。 -->
+    <dependency>  
+        <groupId>commons-collections</groupId>  
+        <artifactId>commons-collections</artifactId>  
+        <version>3.2.1</version>  
+    </dependency>  
+	<!-- add ezmorph, 
+		explain:Simple java library for transforming an Object to another Object. 
+		将对象转换为另一个对象的简单java库。 -->
+    <dependency>  
+        <groupId>net.sf.ezmorph</groupId>  
+        <artifactId>ezmorph</artifactId>  
+        <version>1.0.3</version>  
+    </dependency>  
+    <!-- add aspectj, 
+    	explain:The AspectJ weaver introduces advices to java classes
+    	AspectJ weaver引入了对java类的建议 -->
+    <dependency>
+	    <groupId>org.aspectj</groupId>
+	    <artifactId>aspectjweaver</artifactId>
+	    <version>1.6.9</version>
+	</dependency>
+	<!-- add entity annotations : @Entity ... 实体类里面的注解 -->
+	<dependency>
+	    <groupId>org.eclipse.persistence</groupId>
+	    <artifactId>javax.persistence</artifactId>
+	    <version>2.1.0</version>
+	</dependency>
+	
+	<!-- add Support Chinese character to most popular Pinyin systems -->
+	<dependency>
+	    <groupId>com.belerweb</groupId>
+	    <artifactId>pinyin4j</artifactId>
+	    <version>2.5.1</version>
+	</dependency>
+	
+	<!-- add Apache freemarker -->
+	<dependency>
+	    <groupId>org.freemarker</groupId>
+	    <artifactId>freemarker</artifactId>
+	    <version>2.3.23</version>
+	</dependency>
+	
+	<!-- add hibernate family -->
+	<dependency>
+	    <groupId>org.hibernate</groupId>
+	    <artifactId>hibernate-core</artifactId>
+	    <version>${hibernate.version}</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.hibernate</groupId>
+	    <artifactId>hibernate-proxool</artifactId>
+	    <version>${hibernate.version}</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.hibernate</groupId>
+	    <artifactId>hibernate-validator</artifactId>
+	    <version>${hibernate.version}</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.hibernate</groupId>
+	    <artifactId>hibernate-validator-annotation-processor</artifactId>
+	    <version>${hibernate.version}</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.hibernate</groupId>
+	    <artifactId>hibernate-ehcache</artifactId>
+	    <version>${hibernate.version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.hibernate.common</groupId>
+	    <artifactId>hibernate-commons-annotations</artifactId>
+	    <version>4.0.2.Final</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.hibernate.javax.persistence</groupId>
+	    <artifactId>hibernate-jpa-2.0-api</artifactId>
+	    <version>1.0.1.Final</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+	<dependency>
+	    <groupId>org.apache.httpcomponents</groupId>
+	    <artifactId>httpclient</artifactId>
+	    <version>4.1.3</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/javax.faces/jsf-api -->
+	<dependency>
+	    <groupId>javax.faces</groupId>
+	    <artifactId>jsf-api</artifactId>
+	    <version>2.1</version>
+	    <scope>provided</scope>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
+	<dependency>
+	    <groupId>javax.servlet</groupId>
+	    <artifactId>jstl</artifactId>
+	    <version>1.2</version>
+	</dependency>
+	<!--jsp支持-->
+    <!-- servlet 依赖. -->
+    <dependency>
+	    <groupId>javax.servlet</groupId>
+	    <artifactId>javax.servlet-api</artifactId>
+	    <version>3.0.1</version>
+	    <scope>provided</scope>
+	</dependency>
+	
+	<!-- add minidao import ognl/ognl -->
+	<dependency>
+	    <groupId>ognl</groupId>
+	    <artifactId>ognl</artifactId>
+	    <version>2.7.3</version>
+	</dependency>
+		
+	<!-- add spring mvc json support -->
+	<dependency>
+	    <groupId>org.codehaus.jackson</groupId>
+	    <artifactId>jackson-mrbean</artifactId>
+	    <version>1.8.4</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.codehaus.jackson</groupId>
+	    <artifactId>jackson-core-asl</artifactId>
+	    <version>1.8.4</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.codehaus.jackson</groupId>
+	    <artifactId>jackson-mapper-asl</artifactId>
+	    <version>1.9.11</version>
+	</dependency>
+			
+	<!-- add poi jar support -->
+	<dependency>
+	    <groupId>org.apache.poi</groupId>
+	    <artifactId>poi</artifactId>
+	    <version>3.9</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.poi</groupId>
+	    <artifactId>poi-ooxml</artifactId>
+	    <version>3.9</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.poi</groupId>
+	    <artifactId>poi-ooxml-schemas</artifactId>
+	    <version>3.9</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.poi</groupId>
+	    <artifactId>poi-scratchpad</artifactId>
+	    <version>3.9</version>
+	</dependency>
+	
+	<!-- add word converter html -->
+	<dependency>
+	    <groupId>fr.opensagres.xdocreport</groupId>
+	    <artifactId>org.apache.poi.xwpf.converter.core</artifactId>
+	    <version>1.0.1</version>
+	</dependency>
+	<dependency>
+	    <groupId>fr.opensagres.xdocreport</groupId>
+	    <artifactId>org.apache.poi.xwpf.converter.xhtml</artifactId>
+	    <version>1.0.0</version>
+	</dependency>
+	
+	<!-- add input output commons-io -->
+	<dependency>
+	    <groupId>commons-io</groupId>
+	    <artifactId>commons-io</artifactId>
+	    <version>1.3.2</version>
+	</dependency>
+	<!-- The type library and the precompiled Java interfaces of the UDK API. -->
+	<dependency>
+	    <groupId>org.openoffice</groupId>
+	    <artifactId>ridl</artifactId>
+	    <version>3.2.1</version>
+	</dependency>
+	<!-- pagehelper -->
+	<dependency>
+	    <groupId>com.github.pagehelper</groupId>
+	    <artifactId>pagehelper-spring-boot-starter</artifactId>
+	    <version>1.2.3</version>
+	</dependency>
+		
+	<!-- add junit4 -->
+	<dependency>
+	    <groupId>junit</groupId>
+	    <artifactId>junit</artifactId>
+	    <version>4.7</version>
+	    <scope>test</scope>
+	</dependency>
+	
+	<!-- private maven nexus file -->
+	<dependency>
+		<groupId>org.jeecgframework</groupId>
+		<artifactId>minidao</artifactId>
+		<version>1.5.1</version>
+	</dependency>
+	<dependency>
+		<groupId>com.baidu</groupId>
+		<artifactId>ueditor</artifactId>
+		<version>1.1.1</version>
+	</dependency>
+	<dependency>
+      <groupId>com.microsoft</groupId>
+	  <artifactId>sqljdbc4</artifactId>
+	  <version>1.0</version>
+	</dependency>
+	<!-- 解决4.3.13中没有4.0.9一个方法，minidao中必须要用4.0.9的方法，为4.3.13打的补丁 -->
+	<dependency>
+		<groupId>cn.zup</groupId>
+		<artifactId>zup-spring-jdbc</artifactId>
+		<version>1.0</version>
+	</dependency>
+	
+  </dependencies>
+  
+  <!-- 
+     首先访问本地仓库
+     本地仓库没有，则访问私服仓库
+     私服仓库也没有，则访问中心仓库
+   -->
+   <repositories>
+	  <repository>
+	    <id>jcny</id>
+	    <name>private maven repository</name>
+	    <url>http://113.128.199.194:29991/repository/jcny/</url>
+	    <releases><enabled>true</enabled></releases>
+	    <snapshots><enabled>false</enabled></snapshots>
+	  </repository>
+	  <repository>
+	    <id>maven-public</id>
+	    <name>cloud release repository</name>
+	    <url>http://113.128.199.194:29991/repository/maven-public/</url>
+	    <releases><enabled>false</enabled></releases>
+	    <snapshots><enabled>true</enabled></snapshots>
+	  </repository>
+   </repositories>
+
+
+	<!-- 发布jar包到nexus的相应仓库中 -->
+	<distributionManagement>
+	  <!-- 发布到 快照版本的仓库，即 测试版本仓库 -->
+	  <snapshotRepository>
+	    <id>jcny</id>
+	    <url>http://113.128.199.194:29991/repository/jcny/</url>
+	  </snapshotRepository>
+	</distributionManagement>
+	
+    <build>
+    	<finalName>JDataX</finalName>
+    	<plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${springboot.version}</version>
+                <configuration>
+                    <mainClass>org.andot.jdatax.JDataXApplication</mainClass>
+                    <source>1.8</source>  
+	                <target>1.8</target>
+                </configuration>
+	            <executions>  
+	                <execution>  
+	                    <goals>  
+	                        <goal>repackage</goal>  
+	                    </goals>  
+	                </execution>  
+	            </executions> 
+	            <dependencies>
+                    <!-- spring热部署 -->
+                    <dependency>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>springloaded</artifactId>
+                        <version>1.2.6.RELEASE</version>
+                    </dependency>
+                </dependencies> 
+            </plugin>
+            <!-- 忽略无web.xml警告 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+            <!-- mybatis 自动代码生成 -->
+            <plugin>
+            	<groupId>org.mybatis.generator</groupId>
+            	<artifactId>mybatis-generator-maven-plugin</artifactId>
+            	<version>1.3.2</version>
+            	<configuration>
+            		<verbose></verbose>
+            	</configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

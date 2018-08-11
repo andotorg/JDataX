@@ -1,0 +1,46 @@
+{
+    "job": {
+        "setting": {
+            "speed": {
+                "byte": 1048576,
+                "channel":"5"            
+            }
+        },
+        "content": [
+            {
+                "reader": {
+                    "name": "sqlserverreader",
+                    "parameter": {
+                        "username": "bjlb",
+                        "password": "hbSUQ_77",
+                        "column": [{{fieldName}}],
+                        "connection": [
+                            {
+                                "table": ["{{oldTableName}}"],
+                                "jdbcUrl": ["jdbc:sqlserver://192.168.18.10:10007;DatabaseName=DynamicDatabase"]
+                            }
+                        ]
+                    }
+                },
+               "writer": {
+                    "name": "mysqlwriter",
+                    "parameter": {
+                        "writeMode": "update",
+                        "username": "root",
+                        "password": "iesapp",
+                        "column":[{{fieldName}}],
+                        "preSql":[
+                        	"delete from {{newTableName}}"
+                        ],
+                        "connection": [
+                            {
+                                "table": ["{{newTableName}}"],
+                                "jdbcUrl": "jdbc:mysql://192.168.18.30:3306/mgeids?useUnicode=true&characterEncoding=utf8"                                
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,86 @@
+spring: 
+  profiles: dev
+  datasource: #数据源
+    base: 
+      type: com.alibaba.druid.pool.DruidDataSource
+      driverClassName: com.mysql.jdbc.Driver
+      url: jdbc:mysql://192.168.10.239:3306/jdatax?useUnicode=true&characterEncoding=UTF-8
+      username: root
+      password: iesapp
+      initialSize: 50 
+      maxActive: 200 
+      maxIdle: 10 
+      maxWait: 80 
+      validationQuery: SELECT 1
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 7200000
+      removeAbandoned: true
+      removeAbandonedTimeout: 1800
+      defaultAutoCommit: true
+      logAbandoned: true
+    mine: 
+      type: com.alibaba.druid.pool.DruidDataSource
+      driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+      url: jdbc:sqlserver://192.168.10.215:1433;DatabaseName=DynamicDatabase;
+      username: bj
+      password: Zd666666
+      initialSize: 50 
+      maxActive: 200 
+      maxIdle: 10 
+      maxWait: 80 
+      validationQuery: SELECT 1
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 7200000
+      removeAbandoned: true
+      removeAbandonedTimeout: 1800
+      defaultAutoCommit: true
+      logAbandoned: true
+    pms: 
+      type: com.alibaba.druid.pool.DruidDataSource
+      driverClassName: com.mysql.jdbc.Driver
+      url: jdbc:mysql://192.168.10.216:3306/pmstest?useUnicode=true&characterEncoding=UTF-8
+      username: root
+      password: andot
+      initialSize: 50 
+      maxActive: 200 
+      maxIdle: 10 
+      maxWait: 80 
+      validationQuery: SELECT 1
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 7200000
+      removeAbandoned: true
+      removeAbandonedTimeout: 1800
+      defaultAutoCommit: true
+      logAbandoned: true
+    mgeids: 
+      type: com.alibaba.druid.pool.DruidDataSource
+      driverClassName: com.mysql.jdbc.Driver
+      url: jdbc:mysql://192.168.10.216:3306/mgeids?useUnicode=true&characterEncoding=UTF-8
+      username: root
+      password: andot
+      initialSize: 5 
+      maxActive: 200 
+      maxIdle: 10 
+      maxWait: 80 
+      validationQuery: SELECT 1
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 7200000
+      removeAbandoned: true
+      removeAbandonedTimeout: 1800
+      defaultAutoCommit: true
+      logAbandoned: true
+mybatis: 
+  mapper-locations: classpath:mapper/**/*Mapper.xml
+  
+logging:
+  file: ../log.log
+         
+pagehelper:
+    helperDialect: mysql
+    reasonable: true
+    supportMethodsArguments: true
+    params: count=countSql
+     
+  
+
+
