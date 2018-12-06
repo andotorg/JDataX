@@ -469,64 +469,8 @@
 	    <version>4.7</version>
 	    <scope>test</scope>
 	</dependency>
-	
-	<!-- private maven nexus file -->
-	<dependency>
-		<groupId>org.jeecgframework</groupId>
-		<artifactId>minidao</artifactId>
-		<version>1.5.1</version>
-	</dependency>
-	<dependency>
-		<groupId>com.baidu</groupId>
-		<artifactId>ueditor</artifactId>
-		<version>1.1.1</version>
-	</dependency>
-	<dependency>
-      <groupId>com.microsoft</groupId>
-	  <artifactId>sqljdbc4</artifactId>
-	  <version>1.0</version>
-	</dependency>
-	<!-- 解决4.3.13中没有4.0.9一个方法，minidao中必须要用4.0.9的方法，为4.3.13打的补丁 -->
-	<dependency>
-		<groupId>cn.zup</groupId>
-		<artifactId>zup-spring-jdbc</artifactId>
-		<version>1.0</version>
-	</dependency>
-	
   </dependencies>
   
-  <!-- 
-     首先访问本地仓库
-     本地仓库没有，则访问私服仓库
-     私服仓库也没有，则访问中心仓库
-   -->
-   <repositories>
-	  <repository>
-	    <id>jcny</id>
-	    <name>private maven repository</name>
-	    <url>http://113.128.199.194:29991/repository/jcny/</url>
-	    <releases><enabled>true</enabled></releases>
-	    <snapshots><enabled>false</enabled></snapshots>
-	  </repository>
-	  <repository>
-	    <id>maven-public</id>
-	    <name>cloud release repository</name>
-	    <url>http://113.128.199.194:29991/repository/maven-public/</url>
-	    <releases><enabled>false</enabled></releases>
-	    <snapshots><enabled>true</enabled></snapshots>
-	  </repository>
-   </repositories>
-
-
-	<!-- 发布jar包到nexus的相应仓库中 -->
-	<distributionManagement>
-	  <!-- 发布到 快照版本的仓库，即 测试版本仓库 -->
-	  <snapshotRepository>
-	    <id>jcny</id>
-	    <url>http://113.128.199.194:29991/repository/jcny/</url>
-	  </snapshotRepository>
-	</distributionManagement>
-	
     <build>
     	<finalName>JDataX</finalName>
     	<plugins>
