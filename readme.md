@@ -14,6 +14,9 @@
 #### 说明：
   目前此中间件自用版，根据公司给的需求，自己制作的一个小工具，目前还在完善当中，遇到问题直接QQ问我，或者提出Issues，感谢您的使用！
 
+### 思维导图（版本更新计划）
+![JDataX思维导图]()
+
 #### 效果图
 ![xgt](https://github.com/andotorg/JDataX/blob/master/GSSB%7DZCF%25D%40E2J%5BH7X_1%5B66.png "效果图")
 
