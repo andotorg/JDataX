@@ -11,7 +11,7 @@ import com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure;
 
 /**
  * Hello JDataX
- *
+ * @author andot
  */
 
 @SpringBootApplication

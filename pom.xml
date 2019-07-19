@@ -91,7 +91,6 @@
     <dependency>
       <groupId>org.apache.tomcat.embed</groupId>
       <artifactId>tomcat-embed-jasper</artifactId>
-      <version>${springboot.version}</version>
       <scope>provided</scope>
     </dependency>
     <!-- add springboot dev tools warn: optional is true , this is the available! -->
@@ -480,8 +479,6 @@
                 <version>${springboot.version}</version>
                 <configuration>
                     <mainClass>org.andot.jdatax.JDataXApplication</mainClass>
-                    <source>1.8</source>  
-	                <target>1.8</target>
                 </configuration>
 	            <executions>  
 	                <execution>  
