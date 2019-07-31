@@ -10,11 +10,14 @@ import org.junit.Test;
 import org.andot.jdatax.entity.DBInfo;
 import org.andot.jdatax.service.DataXJsonFileService;
 import org.andot.jdatax.utils.JavaShellUtil;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class DataXJsonFileTest extends BaseTest {
 	
 	@Resource
 	private DataXJsonFileService dataXJsonFileService;
+	@Autowired
+	private JavaShellUtil javaShellUtil;
 	
 	@Test
 	public void createDataXJsonFile() {
@@ -45,5 +48,10 @@ public class DataXJsonFileTest extends BaseTest {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+
+	@Test
+	public void consolePrint() throws IOException {
+		javaShellUtil.exec1(new String[]{});
 	}
 }
