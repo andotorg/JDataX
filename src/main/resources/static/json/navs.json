@@ -11,6 +11,42 @@
 			"icon": "&#xe634;",
 			"href": "page/datax/createDataJsonFile.html",
 			"spread": false
+		},
+		{
+			"title": "任务调度",
+			"icon": "&#xe634;",
+			"href": "page/datax/",
+			"spread": false
+		},
+		{
+			"title": "报警配置",
+			"icon": "&#xe634;",
+			"href": "page/datax/",
+			"spread": false
+		},
+		{
+			"title": "邮件配置",
+			"icon": "&#xe634;",
+			"href": "page/datax/",
+			"spread": false
+		},
+		{
+			"title": "日志监控",
+			"icon": "&#xe634;",
+			"href": "page/console/index.html",
+			"spread": false
+		},
+		{
+			"title": "软件商店",
+			"icon": "&#xe634;",
+			"href": "page/soft/",
+			"spread": false
+		},
+		{
+			"title": "插件商店",
+			"icon": "&#xe634;",
+			"href": "page/plugin/",
+			"spread": false
 		}
 	]
 }

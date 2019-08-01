@@ -9,6 +9,7 @@ import javax.servlet.ServletException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import org.andot.jdatax.entity.DBInfo;
@@ -20,7 +21,10 @@ import org.andot.jdatax.utils.JavaShellUtil;
 
 @Service("dataXJsonFileService")
 public class DataXJsonFileServiceImpl implements DataXJsonFileService {
-	
+
+	@Autowired
+	private JavaShellUtil javaShellUtil;
+
 	private Logger log = LoggerFactory.getLogger(DataXJsonFileServiceImpl.class);
 
 	@Override
@@ -70,7 +74,7 @@ public class DataXJsonFileServiceImpl implements DataXJsonFileService {
 	            if(array[i].isFile()) {
 	            	System.err.println(array[i].getPath());
 	            	String cmds[] = {pyPath, dataxPath, array[i].getPath()};
-	        		JavaShellUtil.exec(cmds);
+					javaShellUtil.execDi(cmds);
 	        		Thread.sleep(8000);
 	            }
 	        }

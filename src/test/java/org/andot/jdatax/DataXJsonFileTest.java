@@ -52,6 +52,6 @@ public class DataXJsonFileTest extends BaseTest {
 
 	@Test
 	public void consolePrint() throws IOException {
-		javaShellUtil.exec1(new String[]{});
+		javaShellUtil.execDi(new String[]{});
 	}
 }
