@@ -20,4 +20,6 @@
 #### 效果图
 ![xgt](https://github.com/andotorg/JDataX/blob/master/GSSB%7DZCF%25D%40E2J%5BH7X_1%5B66.png "效果图")
 
+![实时回传控制台日志](https://github.com/andotorg/JDataX/blob/master/TIM%E6%88%AA%E5%9B%BE20190805202916.jpg)
+
 ### 欢迎大家贡献自己的代码，感谢
