@@ -158,7 +158,7 @@ layui.use(['form','layer','laydate','table','laytpl'],function(){
     	layui.layer.open({
   		  type: 1,
   		  skin: 'layui-layer-rim', //加上边框
-  		  area: ['420px', '420px'], //宽高
+  		  area: ['800px', '600px'], //宽高
   		  content:  $("#dataDialog"),
   		  btn: ['同步数据', '取消'],
   		  yes: function(){
