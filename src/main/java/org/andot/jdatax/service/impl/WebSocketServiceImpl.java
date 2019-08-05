@@ -9,7 +9,9 @@ import java.io.IOException;
 import java.util.concurrent.ConcurrentHashMap;
 
 /***
- * websocket
+ * websocket 实现的服务，实现消息时候回传到前端
+ * @author lucas
+ * @date 2019-8-1 15:55:51
  */
 @ServerEndpoint("/webSocket")
 @Service("webSocketService")
