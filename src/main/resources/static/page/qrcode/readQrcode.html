@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>DataX配置</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="../../layui/css/layui.css" media="all" />
+	<link rel="stylesheet" href="../../css/public.css" media="all" />
+	<link rel="stylesheet" href="../../css/loading.css" media="all" />
+	<style type="text/css">
+		.layui-layer-page .layui-layer-content {
+		    position: relative;
+		    overflow: visible !important;
+		    background: none !important;
+		}
+	</style>
+</head>
+<body class="childrenBody">
+	<blockquote class="layui-elem-quote quoteBox">
+		<form class="layui-form">
+			<div class="layui-form-item">
+				<label class="layui-form-label">文件上传</label>
+				<div class="layui-input-block">
+					<button type="button" class="layui-btn" onclick="openFile()">
+						<i class="layui-icon">&#xe67c;</i>上传文件
+					</button>
+					<input type="file" id="uploadfile" style="display: none;" />
+				</div>
+			</div>
+			<div>
+				识别结果：<label id="result"></label>
+			</div>
+		</form>
+	</blockquote>
+
+	<!--操作-->
+	<script type="text/html" id="tableListBar">
+		<a class="layui-btn layui-btn-xs layui-btn-primary" lay-event="look">查看字段</a>
+	</script>
+	<script type="text/javascript" src="../../layui/layui.js"></script>
+	<script type="text/javascript" src="../../js/llqrcode.js"></script>
+
+	<script>
+		let getObjectURL = function (file) {
+			let url = null;
+			if (window.createObjectURL != undefined) { // basic
+				url = window.createObjectURL(file);
+			} else if (window.URL != undefined) { // mozilla(firefox)
+				url = window.URL.createObjectURL(file);
+			} else if (window.webkitURL != undefined) { // webkit or chrome
+				url = window.webkitURL.createObjectURL(file);
+			}
+			return url;
+		}
+		document.getElementById("uploadfile").onchange = function(e){
+			qrcode.decode(getObjectURL(this.files[0]));
+			qrcode.callback = function(imgMsg){
+				document.getElementById("result").innerText = imgMsg;
+			}
+		}
+		//打开文件对话框
+		function openFile(){
+			document.getElementById("uploadfile").click();
+		}
+	</script>
+</body>
+</html>
