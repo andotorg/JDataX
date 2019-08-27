@@ -1,3 +1,11 @@
+/***
+ * Source Author: 未知
+ * @update author: lucas
+ * @desc 解决了个别二维码无法识别，显示错误的问题
+ * @studio Andot Studi
+ * @wechat: ucisoftcom
+ * @zhihu: Andot蚁点
+ */
 var _aa = {};
 _aa._ab = function(f, e) {
     var d = qrcode.width;
