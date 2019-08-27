@@ -29,11 +29,15 @@
 					<button type="button" class="layui-btn" onclick="openFile()">
 						<i class="layui-icon">&#xe67c;</i>上传文件
 					</button>
-					<input type="file" id="uploadfile" style="display: none;" />
+					<input type="file" id="uploadfile" multiple="true" style="display: none;" />
 				</div>
 			</div>
+			<button onclick="upload()" type="button">上传</button>
 			<div>
-				识别结果：<label id="result"></label>
+				识别结果：
+				<div id="result">
+					
+				</div>
 			</div>
 		</form>
 	</blockquote>
@@ -57,12 +61,62 @@
 			}
 			return url;
 		}
-		document.getElementById("uploadfile").onchange = function(e){
-			qrcode.decode(getObjectURL(this.files[0]));
-			qrcode.callback = function(imgMsg){
-				document.getElementById("result").innerText = imgMsg;
+		let fun = {
+			imgMsgs: [],
+			up: function(funa){
+				let html = '';
+				let imgMsgs = funa.imgMsgs;
+				html += '<table border="1">';
+				for(let i=0; i<imgMsgs.length; i++){
+					html += ' <tr><td>'+imgMsgs[i].name+'</td><td>'+imgMsgs[i].content+'</td></tr>';
+					// console.log((i+1)+'、'+imgMsgs[i].name+' | '+imgMsgs[i].content);
+				}
+				html+='</table>';
+				console.log(html)
+				document.getElementById("result").innerHTM = html;
 			}
+		};
+		document.getElementById("uploadfile").onchange = function(e){
+			var files = this.files; //将每次选择的文件追加到文件队列
+			
+			for(let i=0; i<files.length; i++){
+				let imgMsg = {
+					name: files[i].name,
+					content: ''
+				};
+				fun.imgMsgs.push(imgMsg);
+				qrcode.decode(getObjectURL(this.files[i]));
+				qrcode.callback = function(imgMsg, fun){
+					for(let i=0; i<fun.imgMsgs.length; i++){
+						if(fun.imgMsgs[i].content == ''){
+							fun.imgMsgs[i].content = imgMsg;
+							if(i == fun.imgMsgs.length-1){
+								fun.up(fun);
+							}
+							break;
+						}
+					}					
+				}
+			}
+			
+			
+			// console.log(this.files[0])
+			// qrcode.decode(getObjectURL(this.files[0]));
+			// qrcode.callback = function(imgMsg){
+			// 	document.getElementById("result").innerText = imgMsg;
+			// }
 		}
+
+		function upload(funa){
+			let html = '';
+			let imgMsgs = funa.imgMsgs;
+			for(let i=0; i<imgMsgs.length; i++){
+				html += '<span>'+imgMsgs[i].name+'</span>====<span>'+imgMsgs[i].content+'</span><br>';
+			}
+			console.log(html)
+			document.getElementById("result").innerHTM = html;
+		}
+
 		//打开文件对话框
 		function openFile(){
 			document.getElementById("uploadfile").click();
