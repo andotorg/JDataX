@@ -65,7 +65,7 @@ public class ReadDataBaseController {
 	@RequestMapping("/showTables")
 	public String showTables(DBInfo dbInfo, int flastRow, int pageSize, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException, SQLException {
 		dbInfoService.addDBInfo(dbInfo);
-		List<Map<String,String>> list = new ArrayList<Map<String,String>>();
+		List<Map<String,String>> list = new ArrayList<>();
 		list = DataBaseOperation.getDatabaseTables(dbInfo);
 		return ResultJson.getJsonMsg(new ResultJson(1, list, list.size(), "success"));
 	}
@@ -76,7 +76,7 @@ public class ReadDataBaseController {
 	 * */
 	@RequestMapping("/showColumn")
 	public String showColumn(DBInfo dbInfo, String tableName, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		List<Object> list = new ArrayList<Object>();
+		List<Object> list = new ArrayList<>();
 		try {
 			list = DataBaseOperation.getTableColum(tableName, dbInfo);
 		} catch (Exception e) {
@@ -87,7 +87,7 @@ public class ReadDataBaseController {
 	
 	@RequestMapping("/showTableData")
 	public String showTableData(DBInfo dbInfo, String tableName, String fields, HttpServletRequest req, HttpServletResponse resp){
-		List<Object> list = new ArrayList<Object>();
+		List<Object> list = new ArrayList<>();
 		try {
 			list = DataBaseOperation.getTableDataObject(fields, tableName, dbInfo);
 		} catch (Exception e) {
