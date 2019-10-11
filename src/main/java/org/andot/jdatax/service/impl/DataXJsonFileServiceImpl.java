@@ -33,20 +33,23 @@ public class DataXJsonFileServiceImpl implements DataXJsonFileService {
 		List<Map<String,String>> tableList = DataBaseOperation.getDatabaseTables(dbInfo);
 		for (Map<String, String> map : tableList) {
 			String tableName = map.get("name");
-			if(tableName.equals("USER_INFO") || tableName.equals("DICAREA"))
+			if(tableName.equals("USER_INFO") || tableName.equals("DICAREA")) {
 				continue;
-			List<FieldDetailInfo> listCol = DataBaseOperation.getTableColumDetail(tableName, dbInfo);
-			String fields = "";
-			for (FieldDetailInfo fieldDetailInfo : listCol) {
-				fields += "\""+fieldDetailInfo.getTableCloumn()+"\", ";
 			}
-			if(fields.equals(""))
+			List<FieldDetailInfo> listCol = DataBaseOperation.getTableColumDetail(tableName, dbInfo);
+			StringBuilder fields = new StringBuilder();
+			int len = listCol.size();
+			for (int i = 0; i < len; i++) {
+				fields.append("\""+listCol.get(i).getTableCloumn()+"\", ");
+			}
+			if(fields.toString().equals("")){
 				continue;
-			fields = fields.substring(0, fields.length()-2);
+			}
+			String fieldsStr = fields.toString().substring(0, fields.length()-2);
 			try {
 				String allstr = FileOperateUtil.readFileByName(tempFilePath);
 				
-				allstr = allstr.replace("{{fieldName}}", fields.toUpperCase());
+				allstr = allstr.replace("{{fieldName}}", fieldsStr.toUpperCase());
 				allstr = allstr.replace("{{oldTableName}}", tableName.toUpperCase());
 				allstr = allstr.replace("{{newTableName}}", tableName.toLowerCase());
 				

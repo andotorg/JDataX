@@ -37,7 +37,16 @@ public class FileOperateUtil {
 			}
 			br.close();
 		} catch (Exception e) {
-			System.err.println(e.getMessage());
+			throw new RuntimeException(e);
+		} finally {
+			if(br != null) {
+				try {
+					br.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+					throw new RuntimeException(e);
+				}
+			}
 		}
 		return allstr;
 	}
@@ -49,7 +58,7 @@ public class FileOperateUtil {
 	 * @param allstr 需要写入的文本
 	 * @param filePath 文件路径
 	 * */
-	public static void textWriteFile(String allstr, String filePath){
+	public static void textWriteFile(String allstr, String filePath) {
 		BufferedWriter bw=null;
 		try {
 			File targetFile=new File(filePath);
@@ -60,7 +69,16 @@ public class FileOperateUtil {
 			bw.write(allstr);
 			bw.close();
 		} catch (Exception e) {
-			System.err.println(e.getMessage());
+			throw new RuntimeException(e);
+		} finally {
+			if(bw != null) {
+				try {
+					bw.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+					throw new RuntimeException(e);
+				}
+			}
 		}
 		
 	}
